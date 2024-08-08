@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BKMeCommerceWeb.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BKMeCommerceWeb.Data
 {
@@ -8,5 +9,6 @@ namespace BKMeCommerceWeb.Data
         {
             
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }
