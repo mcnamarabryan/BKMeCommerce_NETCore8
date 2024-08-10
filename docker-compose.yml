@@ -6,3 +6,9 @@ services:
     build:
       context: .
       dockerfile: BKMeCommerceWeb/Dockerfile
+
+  bkmecommerceweb_razor:
+    image: ${DOCKER_REGISTRY-}bkmecommercewebrazor
+    build:
+      context: .
+      dockerfile: BKMeCommerceWeb_Razor/Dockerfile

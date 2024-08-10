@@ -4,8 +4,9 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "bkmecommerceweb": "StartDebugging"
+        "bkmecommerceweb": "StartDebugging",
+        "bkmecommerceweb_razor": "StartDebugging"
       }
     }
   }
-}   
+}
