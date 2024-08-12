@@ -26,7 +26,7 @@ namespace BKMeCommerce.DataAccess.Repository
             _context.Add(entity);
         }
 
-        T IRepository<T>.GetFirstOrDefault(Expression<Func<T, bool>> filter)
+        T IRepository<T>.Get(Expression<Func<T, bool>> filter)
         {
             IQueryable<T> query = dbSet;
             query = query.Where(filter);
