@@ -18,7 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BKMeCommerce.Models\BKMeCommerce.Models.csproj" />
-    <ProjectReference Include="..\BKMeCommerce.Utility\BKMeCommerce.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
