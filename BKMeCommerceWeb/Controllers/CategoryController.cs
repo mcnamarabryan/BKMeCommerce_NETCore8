@@ -1,6 +1,6 @@
-﻿using BKMeCommerceWeb.Data;
+﻿using BKMeCommerce.DataAccess.Data;
+using BKMeCommerce.Models;
 using Microsoft.AspNetCore.Mvc;
-using BKMeCommerceWeb.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BKMeCommerceWeb.Controllers

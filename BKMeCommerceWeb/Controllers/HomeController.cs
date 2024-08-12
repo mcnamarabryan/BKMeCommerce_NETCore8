@@ -1,4 +1,4 @@
-using BKMeCommerceWeb.Models;
+using BKMeCommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

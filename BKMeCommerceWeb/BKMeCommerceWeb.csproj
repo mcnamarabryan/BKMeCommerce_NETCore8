@@ -28,4 +28,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BKMeCommerce.DataAccess\BKMeCommerce.DataAccess.csproj" />
+    <ProjectReference Include="..\BKMeCommerce.Models\BKMeCommerce.Models.csproj" />
+    <ProjectReference Include="..\BKMeCommerce.Utility\BKMeCommerce.Utility.csproj" />
+  </ItemGroup>
+
 </Project>
