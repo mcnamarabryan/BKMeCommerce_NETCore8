@@ -1,6 +1,7 @@
 using BKMeCommerce.DataAccess.Data;
 using BKMeCommerce.DataAccess.Repository;
 using BKMeCommerce.DataAccess.Repository.IRepository;
+using BKMeCommerceWeb.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-
 var app = builder.Build();
+
+app.UseMiddleware<UserCultureMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
