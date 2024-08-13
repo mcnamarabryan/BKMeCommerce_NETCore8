@@ -26,17 +26,17 @@ namespace BKMeCommerce.DataAccess.Repository
             _context.Add(entity);
         }
 
+        IEnumerable<T> IRepository<T>.GetAll()
+        {
+            IQueryable<T> query = dbSet;
+            return query.ToList();
+        }
+
         T IRepository<T>.Get(Expression<Func<T, bool>> filter)
         {
             IQueryable<T> query = dbSet;
             query = query.Where(filter);
             return query.FirstOrDefault();
-        }
-
-        IEnumerable<T> IRepository<T>.GetAll()
-        {
-            IQueryable<T> query = dbSet;
-            return query.ToList();
         }
 
         void IRepository<T>.Remove(T entity)
