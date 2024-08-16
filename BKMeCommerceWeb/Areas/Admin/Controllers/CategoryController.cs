@@ -1,12 +1,15 @@
 ﻿using BKMeCommerce.DataAccess.Data;
 using BKMeCommerce.DataAccess.Repository.IRepository;
 using BKMeCommerce.Models;
+using BKMeCommerce.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BKMeCommerceWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -48,10 +51,10 @@ namespace BKMeCommerceWeb.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Edit(int? categoryId)
+        public IActionResult Edit(int? id)
         {
-            if (categoryId == null || categoryId == 0) { return NotFound(); }
-            Category? categoryFromDb = _unitOfWork.Category.Get(c => c.Id == categoryId);
+            if (id == null || id == 0) { return NotFound(); }
+            Category? categoryFromDb = _unitOfWork.Category.Get(c => c.Id == id);
             if (categoryFromDb == null) { return NotFound(); }
             return View(categoryFromDb);
         }
@@ -69,19 +72,19 @@ namespace BKMeCommerceWeb.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Delete(int? categoryId)
+        public IActionResult Delete(int? id)
         {
-            if (categoryId == null || categoryId == 0) { return NotFound(); }
-            Category? categoryFromDb = _unitOfWork.Category.Get(c => c.Id == categoryId);
+            if (id == null || id == 0) { return NotFound(); }
+            Category? categoryFromDb = _unitOfWork.Category.Get(c => c.Id == id);
             if (categoryFromDb == null) { return NotFound(); }
             return View(categoryFromDb);
         }
 
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeletePOST(int? categoryId)
+        public IActionResult DeletePOST(int? id)
         {
-            if (categoryId == null || categoryId == 0) { return NotFound(); }
-            Category? category = _unitOfWork.Category.Get(c => c.Id == categoryId);
+            if (id == null || id == 0) { return NotFound(); }
+            Category? category = _unitOfWork.Category.Get(c => c.Id == id);
             if (category == null) { return NotFound(); }
             _unitOfWork.Category.Remove(category);
             _unitOfWork.Save();
