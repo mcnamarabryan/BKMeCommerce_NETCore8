@@ -25,19 +25,19 @@ BKMeCommerce is an e-commerce web application built with .NET Core 8. It provide
    cd BKMeCommerce_NETCore8
 2. Build and run the application:
 
-- Open the solution in Visual Studio.
+	Open the solution in Visual Studio.
 
-- Restore the NuGet packages and build the project.
-
-- Update the database:
+	Restore the NuGet packages and build the project.
+  
+	Update the database:
 
 	```sh
 	dotnet ef database update
-- Run the application.
+	Run the application.
 
 3. Docker Support:
 
-	- The project includes Docker support. Use the provided docker-compose.yml to set up the required services.
+	The project includes Docker support. Use the provided docker-compose.yml to set up the required services.
 	```sh
 	docker-compose up -d
 
