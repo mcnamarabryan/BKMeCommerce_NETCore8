@@ -7,11 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BKMeCommerceWeb", "BKMeComm
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{528062B5-7A02-49D8-82AF-DAD8738EB766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKMeCommerce.DataAccess", "BKMeCommerce.DataAccess\BKMeCommerce.DataAccess.csproj", "{C51E1C22-9053-4B7C-A4CA-DD77272DA225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BKMeCommerce.DataAccess", "BKMeCommerce.DataAccess\BKMeCommerce.DataAccess.csproj", "{C51E1C22-9053-4B7C-A4CA-DD77272DA225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKMeCommerce.Models", "BKMeCommerce.Models\BKMeCommerce.Models.csproj", "{39676A70-F8C5-44A4-AA85-FD865B8D9095}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BKMeCommerce.Models", "BKMeCommerce.Models\BKMeCommerce.Models.csproj", "{39676A70-F8C5-44A4-AA85-FD865B8D9095}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKMeCommerce.Utility", "BKMeCommerce.Utility\BKMeCommerce.Utility.csproj", "{D9A5938D-171C-4723-BE90-A0A57A8BEF62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BKMeCommerce.Utility", "BKMeCommerce.Utility\BKMeCommerce.Utility.csproj", "{D9A5938D-171C-4723-BE90-A0A57A8BEF62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5060C8A-9759-48CB-B9CD-1BD9DDE4E3A5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
