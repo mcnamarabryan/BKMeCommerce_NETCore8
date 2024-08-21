@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using BKMeCommerce.DataAccess.Data;
 using BKMeCommerce.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace BKMeCommerce.DataAccess.Repository
 {
@@ -27,9 +29,13 @@ namespace BKMeCommerce.DataAccess.Repository
             _context.Add(entity);
         }
 
-        IEnumerable<T> IRepository<T>.GetAll(string? includeProperties = null)
+        IEnumerable<T> IRepository<T>.GetAll(Expression<Func<T, bool>>? filter, string? includeProperties)
         {
             IQueryable<T> query = dbSet;
+            if (filter != null)
+            {
+                query.Where(filter);
+            }
             if (!string.IsNullOrEmpty(includeProperties))
             {
                 foreach (var prop in includeProperties
@@ -41,9 +47,17 @@ namespace BKMeCommerce.DataAccess.Repository
             return query.ToList();
         }
 
-        T IRepository<T>.Get(Expression<Func<T, bool>> filter, string? includeProperties = null)
+        T IRepository<T>.Get(Expression<Func<T, bool>> filter, string? includeProperties, bool tracked = false)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query;
+            if (tracked)
+            {
+                query = dbSet;
+            }
+            else
+            {
+                query = dbSet.AsNoTracking();
+            }
             query = query.Where(filter);
             if (!string.IsNullOrEmpty(includeProperties))
             {
